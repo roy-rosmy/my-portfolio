@@ -1,34 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useRef, useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import TrustedBy from './components/TrustedBy'
+import Services from './components/Services'
+import OurWork from './components/OurWork'
+import Teams from './components/Teams'
+import ContactUs from './components/ContactUs'
+import { Toaster } from 'react-hot-toast'
+import Footer from './components/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>(
+    (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
+  )
+
+  const dotRef = useRef<HTMLDivElement>(null)
+  const outlineRef = useRef<HTMLDivElement>(null)
+
+  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
+  const position = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouse.current.x = e.clientX
+      mouse.current.y = e.clientY
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+
+    const animate = () => {
+      position.current.x += (mouse.current.x - position.current.x) * 0.1
+      position.current.y += (mouse.current.y - position.current.y) * 0.1
+
+      if (dotRef.current && outlineRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`
+        outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`
+      }
+
+      requestAnimationFrame(animate)
+    }
+
+    animate()
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='dark:bg-black relative'>
+      <Toaster />
+      <Navbar theme={theme} setTheme={setTheme} />
+      <Hero />
+      <TrustedBy />
+      <Services />
+      <OurWork />
+      <Teams />
+      <ContactUs />
+      <Footer theme={theme} />
+
+      {/* Custom cursor ring */}
+      <div
+        ref={outlineRef}
+        className='fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999]'
+        style={{ transition: 'transform 0.1s ease-out' }}
+      />
+
+      {/* Custom Cursor Dot */}
+      <div ref={dotRef} className='fixed top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999]' />
+    </div>
   )
 }
 
