@@ -1,5 +1,5 @@
 import React from 'react'
-import { company_logos } from '../assets/assets'
+// import { company_logos } from '../assets/assets'
 import { motion } from "motion/react"
 
 const TrustedBy: React.FC = () => {
@@ -28,7 +28,7 @@ const TrustedBy: React.FC = () => {
         viewport={{ once: true }}
         className='flex items-center justify-center flex-wrap gap-10 m-4'
       >
-        {company_logos.map((logo, index) => (
+        {/* {company_logos.map((logo, index) => (
           <motion.img
             key={index}
             src={logo}
@@ -40,7 +40,7 @@ const TrustedBy: React.FC = () => {
             transition={{ duration: 0.4 }}
             className='max-h-5 sm:max-h-6 dark:drop-shadow-xl'
           />
-        ))}
+        ))} */}
       </motion.div>
     </motion.div>
   )

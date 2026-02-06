@@ -3,7 +3,7 @@ import assets from '../assets/assets'
 import Title from './Title'
 import ServiceCard from './ServiceCard'
 import { motion } from "motion/react"
-import { Service } from './ServiceCard' // Import the Service type from ServiceCard
+import type { Service } from './ServiceCard' // Import the Service type from ServiceCard
 
 const Services: React.FC = () => {
   const servicesData: Service[] = [
@@ -38,7 +38,9 @@ const Services: React.FC = () => {
       id='services'
       className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'
     >
-      <img src={assets.bgImage2} alt='Background Decoration' className='absolute -top-110 -left-70 -z-1 dark:hidden' />
+      <img 
+      // src={assets.bgImage2} 
+      alt='Background Decoration' className='absolute -top-110 -left-70 -z-1 dark:hidden' />
       
       <Title
         title='How can we help?'

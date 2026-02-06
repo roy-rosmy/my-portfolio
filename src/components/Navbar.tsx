@@ -20,8 +20,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
     >
 
       <img
-        src={theme === 'dark' ? assets.logo_dark : assets.logo}
+        src={theme === 'dark' ? assets.logo_dark : assets.logo_light}
         className="w-32 sm:w-40"
+        // className="h-10 w-auto sm:h-12 object-contain"
         alt="Logo"
       />
 
@@ -37,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
         }`}
       >
         <img
-          src={assets.close_icon}
+          // src={assets.close_icon}
           alt="Close Sidebar"
           onClick={() => setSidebarOpen(false)}
           className="w-5 absolute right-4 top-4 sm:hidden cursor-pointer"
@@ -54,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
         <ThemeToggleBtn theme={theme} setTheme={setTheme} />
 
         <img
-          src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon}
+          // src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon}
           alt="Menu Icon"
           onClick={() => setSidebarOpen(true)}
           className='w-8 sm:hidden'
@@ -64,7 +65,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
           href="#contact-us"
           className="text-sm max-sm:hidden flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full cursor-pointer hover:scale-105 transition-all"
         >
-          Connect <img src={assets.arrow_icon} width={14} alt="Arrow Icon" />
+          Connect 
+          {/* <img src={assets.arrow_icon} width={14} alt="Arrow Icon" /> */}
         </a>
       </div>
     </motion.div>

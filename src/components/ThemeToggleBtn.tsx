@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import assets from '../assets/assets'
+// import assets from '../assets/assets'
 
 type ThemeToggleBtnProps = {
   theme: 'light' | 'dark'
@@ -27,14 +27,14 @@ const ThemeToggleBtn: React.FC<ThemeToggleBtnProps> = ({ theme, setTheme }) => {
       {theme === 'dark' ? (
         <img
           onClick={() => setTheme('light')}
-          src={assets.sun_icon}
+          // src={assets.sun_icon}
           className='size-8.5 p-1.5 border border-gray-500 rounded-full'
           alt='Switch to light mode'
         />
       ) : (
         <img
           onClick={() => setTheme('dark')}
-          src={assets.moon_icon}
+          // src={assets.moon_icon}
           className='size-8.5 p-1.5 border border-gray-500 rounded-full'
           alt='Switch to dark mode'
         />

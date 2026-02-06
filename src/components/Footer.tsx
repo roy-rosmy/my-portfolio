@@ -1,5 +1,5 @@
 import React from 'react'
-import assets from '../assets/assets'
+// import assets from '../assets/assets'
 import { motion } from "motion/react"
 
 type FooterProps = {
@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className='space-y-5 text-sm text-gray-700 dark:text-gray-400'
         >
-          <img src={theme === 'dark' ? assets.logo_dark : assets.logo} className='w-32 sm:w-44' alt='Logo'/>
+          {/* <img src={theme === 'dark' ? assets.logo_dark : assets.logo} className='w-32 sm:w-44' alt='Logo'/> */}
           <p className='max-w-md'>
             From strategy to execution, we craft digital solutions that move your business forward.
           </p>
@@ -70,10 +70,10 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
         >
           <p>Copyright 2025 @ MyArtStudio - All Right Reserved.</p>
           <div className='flex items-center justify-between gap-4'>
-            <img src={assets.facebook_icon} alt='Facebook'/>
+            {/* <img src={assets.facebook_icon} alt='Facebook'/>
             <img src={assets.twitter_icon} alt='Twitter'/>
             <img src={assets.instagram_icon} alt='Instagram'/>
-            <img src={assets.linkedin_icon} alt='LinkedIn'/>
+            <img src={assets.linkedin_icon} alt='LinkedIn'/> */}
           </div>
         </motion.div>
       </div>

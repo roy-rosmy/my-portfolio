@@ -1,5 +1,5 @@
 import React from 'react'
-import assets from '../assets/assets'
+// import assets from '../assets/assets'
 import { motion } from "motion/react"
 
 const Hero: React.FC = () => {
@@ -16,7 +16,9 @@ const Hero: React.FC = () => {
         viewport={{ once: true }}
         className='inline-flex items-center gap-2 border border-gray-300 p-1.5 pr-4 rounded-full'
       >
-        <img className='w-20' src={assets.group_profile} alt='Group Profile' />
+        <img className='w-20' 
+        // src={assets.group_profile} 
+        alt='Group Profile' />
         <p className='text-xs font-medium'>Trusted By 10k+ people</p>
       </motion.div>
 
@@ -51,9 +53,11 @@ const Hero: React.FC = () => {
         viewport={{ once: true }}
         className='relative'
       >
-        <img src={assets.hero_img} alt='Hero Illustration' className='w-full max-w-6xl' />
+        <img 
+        // src={assets.hero_img}
+        alt='Hero Illustration' className='w-full max-w-6xl' />
         <img
-          src={assets.bgImage1}
+          // src={assets.bgImage1}
           alt='Background Decoration'
           className='absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden'
         />

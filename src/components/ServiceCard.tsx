@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { motion } from "motion/react"
 
-type Service = {
+export type Service = {
   icon: string
   title: string
   description: string
 }
 
-type ServiceCardProps = {
+export type ServiceCardProps = {
   service: Service
   index: number
 }

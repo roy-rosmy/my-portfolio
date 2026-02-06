@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from './Title'
-import assets from '../assets/assets'
+// import assets from '../assets/assets'
 import toast from 'react-hot-toast'
 import { motion } from "motion/react"
 
@@ -58,7 +58,7 @@ const ContactUs: React.FC = () => {
         <div>
           <p className='mb-2 text-sm font-medium'>Your Name</p>
           <div className='flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600'>
-            <img src={assets.person_icon} alt='Person Icon' />
+            {/* <img src={assets.person_icon} alt='Person Icon' /> */}
             <input
               type='text'
               name='name'
@@ -72,7 +72,7 @@ const ContactUs: React.FC = () => {
         <div>
           <p className='mb-2 text-sm font-medium'>Email Id</p>
           <div className='flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600'>
-            <img src={assets.email_icon} alt='Email Icon' />
+            {/* <img src={assets.email_icon} alt='Email Icon' /> */}
             <input
               type='email'
               name='email'
@@ -98,7 +98,8 @@ const ContactUs: React.FC = () => {
           type='submit'
           className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all'
         >
-          Submit <img src={assets.arrow_icon} alt='Arrow Icon' className='w-4' />
+          Submit 
+          {/* <img src={assets.arrow_icon} alt='Arrow Icon' className='w-4' /> */}
         </button>
 
       </motion.form>
