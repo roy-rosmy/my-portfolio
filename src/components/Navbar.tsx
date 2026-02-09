@@ -21,8 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
 
       <img
         src={theme === 'dark' ? assets.logo_dark : assets.logo_light}
-        className="w-32 sm:w-40"
-        // className="h-10 w-auto sm:h-12 object-contain"
+        className="h-13 w-40 sm:w-52 object-contain"
         alt="Logo"
       />
 
@@ -38,16 +37,16 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
         }`}
       >
         <img
-          // src={assets.close_icon}
+          src={assets.close_icon}
           alt="Close Sidebar"
           onClick={() => setSidebarOpen(false)}
           className="w-5 absolute right-4 top-4 sm:hidden cursor-pointer"
         />
 
-        <a onClick={() => setSidebarOpen(false)} href="#" className="sm:hover:border-b">Home</a>
-        <a onClick={() => setSidebarOpen(false)} href="#services" className="sm:hover:border-b">Services</a>
-        <a onClick={() => setSidebarOpen(false)} href="#our-work" className="sm:hover:border-b">Our Work</a>
-        <a onClick={() => setSidebarOpen(false)} href="#contact-us" className="sm:hover:border-b">Contact Us</a>
+        <a onClick={() => setSidebarOpen(false)} href="#" className="sm:hover:border-b">About</a>
+        <a onClick={() => setSidebarOpen(false)} href="#projects" className="sm:hover:border-b">Projects</a>
+        <a onClick={() => setSidebarOpen(false)} href="#skills" className="sm:hover:border-b">Skills</a>
+        <a onClick={() => setSidebarOpen(false)} href="#contact" className="sm:hover:border-b">Contact Us</a>
       </div>
 
       {/* Desktop CTA */}
@@ -55,17 +54,16 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
         <ThemeToggleBtn theme={theme} setTheme={setTheme} />
 
         <img
-          // src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon}
+          src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon}
           alt="Menu Icon"
           onClick={() => setSidebarOpen(true)}
           className='w-8 sm:hidden'
         />
 
         <a
-          href="#contact-us"
           className="text-sm max-sm:hidden flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full cursor-pointer hover:scale-105 transition-all"
         >
-          Connect 
+          Download CV 
           {/* <img src={assets.arrow_icon} width={14} alt="Arrow Icon" /> */}
         </a>
       </div>
