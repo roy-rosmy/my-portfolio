@@ -4,7 +4,7 @@ import Title from './Title'
 import toast from 'react-hot-toast'
 import { motion } from "motion/react"
 
-const ContactUs: React.FC = () => {
+const Contact: React.FC = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -107,4 +107,4 @@ const ContactUs: React.FC = () => {
   )
 }
 
-export default ContactUs
+export default Contact

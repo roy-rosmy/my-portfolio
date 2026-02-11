@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/About'
 // import TrustedBy from './components/TrustedBy'
 // import Services from './components/Services'
 // import OurWork from './components/OurWork'
@@ -8,6 +7,7 @@ import Skills from './components/Skills'
 // import ContactUs from './components/ContactUs'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
+import About from './components/About'
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(
@@ -51,7 +51,7 @@ const App: React.FC = () => {
     <div className='dark:bg-black relative'>
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
-      <Hero />
+      <About />
       <Skills/>
       {/* <TrustedBy />
       <Services />
