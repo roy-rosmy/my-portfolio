@@ -47,6 +47,19 @@ const About: React.FC = () => {
           elegant solutions that elevate user experiences and bring digital
           products to life.
         </p>
+        <div className="flex flex-wrap gap-3 mt-6">
+          {["React", "TypeScript", "Angular", "Tailwind", "Figma", "Bootstrap"].map((skill, index) => (
+            <motion.span
+              key={skill}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-700 to-cyan-400 text-white text-sm font-medium"
+            >
+              {skill}
+            </motion.span>
+          ))}
+        </div>
       </motion.div>
 
       {/* ===== Right Section ===== */}

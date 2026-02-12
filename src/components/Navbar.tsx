@@ -45,8 +45,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
         />
 
         <a onClick={() => setSidebarOpen(false)} href="#" className="sm:hover:border-b">About</a>
-        <a onClick={() => setSidebarOpen(false)} href="#skills" className="sm:hover:border-b">Skills</a>
         <a onClick={() => setSidebarOpen(false)} href="#projects" className="sm:hover:border-b">Projects</a>
+        <a onClick={() => setSidebarOpen(false)} href="#skills" className="sm:hover:border-b">Skills</a>
         <a onClick={() => setSidebarOpen(false)} href="#contact" className="sm:hover:border-b">Contact</a>
       </div>
 

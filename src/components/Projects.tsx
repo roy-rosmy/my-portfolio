@@ -9,12 +9,12 @@ type WorkItem = {
   image: string
 }
 
-const OurWork: React.FC = () => {
+const Projects: React.FC = () => {
   const workData: WorkItem[] = [
     {
-      title: 'Mobile app marketing',
+      title: 'Shalom World',
       description: 'We turn bold ideas into powerful digital solutions that connect, engage...',
-      image: assets.work_mobile_app
+      image: assets.shalom_world
     },
     {
       title: 'Dashboard Management',
@@ -52,9 +52,11 @@ const OurWork: React.FC = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className='hover:scale-102 duration-500 transition-all cursor-pointer'
           >
-            <img src={work.image} className='w-full rounded-xl' alt={work.title} />
-            <h3 className='mt-3 mb-2 text-lg font-semibold'>{work.title}</h3>
-            <p className='text-sm opacity-60 w-5/6'>{work.description}</p>
+            <div className='p-5 bg-blue-100'>
+              <img src={work.image} className='w-full rounded-xl' alt={work.title} />
+              <h3 className='mt-3 mb-2 text-lg font-semibold'>{work.title}</h3>
+              <p className='text-sm opacity-60 w-5/6'>{work.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -62,4 +64,4 @@ const OurWork: React.FC = () => {
   )
 }
 
-export default OurWork
+export default Projects

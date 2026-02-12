@@ -13,7 +13,7 @@ import profile_pic from './RosmyPic.jpg'
 // import social_icon from './social_icon.svg'
 import menu_icon from './menu_icon.svg'
 import close_icon from './close_icon.svg'
-// import work_mobile_app from './work_mobile_app.png'
+import shalom_world from './shalom_world.png'
 // import work_fitness_app from './work_fitness_app.png'
 // import work_dashboard_management from './work_dashboard_management.png'
 // import email_icon from './email_icon.svg'
@@ -42,7 +42,7 @@ import logo_light from './logo_light.png'
 
 const assets = {
   profile_pic,
-//   arrow_icon,
+  shalom_world,
 //   group_profile,
 //   bgImage1,
 //   bgImage2,

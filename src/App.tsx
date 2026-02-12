@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import About from './components/About'
+import Projects from './components/Projects'
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(
@@ -52,10 +53,10 @@ const App: React.FC = () => {
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
       <About />
-      <Skills/>
+      <Projects/>
+      <Skills/>      
       {/* <TrustedBy />
       <Services />
-      <OurWork />
       <ContactUs /> */}
       <Footer theme={theme} />
 
