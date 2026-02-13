@@ -14,8 +14,8 @@ import profile_pic from './RosmyPic.jpg'
 import menu_icon from './menu_icon.svg'
 import close_icon from './close_icon.svg'
 import shalom_world from './shalom_world.png'
-// import work_fitness_app from './work_fitness_app.png'
-// import work_dashboard_management from './work_dashboard_management.png'
+import bi_suite from './bi_suite.png'
+import digital_agency from './digital_agency.png'
 // import email_icon from './email_icon.svg'
 // import person_icon from './person_icon.svg'
 // import facebook_icon from './facebook_icon.svg'
@@ -43,7 +43,7 @@ import logo_light from './logo_light.png'
 const assets = {
   profile_pic,
   shalom_world,
-//   group_profile,
+  bi_suite,
 //   bgImage1,
 //   bgImage2,
 //   hero_img,
@@ -55,7 +55,7 @@ const assets = {
   close_icon,
 //   work_mobile_app,
 //   work_fitness_app,
-//   work_dashboard_management,
+  digital_agency,
 //   email_icon,
 //   person_icon,
 //   facebook_icon,
