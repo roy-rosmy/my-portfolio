@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       id='projects'
-      className='flex flex-col items-center gap-10 px-4 sm:px-12 lg:px-24 xl:px-40 pt-28 text-gray-700 dark:text-white'
+      className='flex flex-col items-center gap-10 px-4 sm:px-8 lg:px-15 xl:px-20 pt-10 text-gray-700 dark:text-white'
     >
       <Title
         title='Featured Projects'

@@ -18,6 +18,7 @@ import {
 
 import { VscVscode } from "react-icons/vsc"
 import { HiOutlineCode } from "react-icons/hi"
+import Title from "./Title"
 
 
 const Skills: React.FC = () => {
@@ -102,48 +103,59 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <div className="flex justify-center mt-20 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full">
-        {skillsData.map((skillCategory, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -6 }}
-            className="bg-white dark:bg-gray-900
-              p-8 rounded-2xl shadow-lg
-              border border-gray-100 dark:border-gray-800
-              transition-all duration-500"
-          >
-            <h3 className="text-xl font-semibold mb-6 text-center">
-              {skillCategory.category}
-            </h3>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      id='skills'
+      className='flex flex-col items-center gap-10 px-4 sm:px-8 lg:px-15 xl:px-20 pt-10 text-gray-700 dark:text-white'
+    >
+      <Title
+          title='My Toolbox'
+          desc='A curated set of technologies and tools I use to craft interactive, high-performance web experiences.'
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full">
+          {skillsData.map((skillCategory, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -6 }}
+              className="bg-white dark:bg-gray-900
+                p-8 rounded-2xl shadow-lg
+                border border-gray-100 dark:border-gray-800
+                transition-all duration-500"
+            >
+              <h3 className="text-xl font-semibold mb-6 text-center">
+                {skillCategory.category}
+              </h3>
 
-            <ul className="flex flex-wrap justify-center gap-4">
-              {skillCategory.list.map((skill, idx) => (
-                <motion.li
-                  key={idx}
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2
-                    px-4 py-2 rounded-full
-                    bg-gray-100 dark:bg-gray-800
-                    shadow-sm hover:shadow-md
-                    transition duration-300"
-                >
-                  {skill.icon}
-                  <span className="text-sm font-medium">
-                    {skill.name}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </div>
-    </div>
+              <ul className="flex flex-wrap justify-center gap-4">
+                {skillCategory.list.map((skill, idx) => (
+                  <motion.li
+                    key={idx}
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2
+                      px-4 py-2 rounded-full
+                      bg-gray-100 dark:bg-gray-800
+                      shadow-sm hover:shadow-md
+                      transition duration-300"
+                  >
+                    {skill.icon}
+                    <span className="text-sm font-medium">
+                      {skill.name}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+    </motion.div>
   )
 }
 

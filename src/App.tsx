@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import About from './components/About'
 import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(
@@ -54,10 +55,8 @@ const App: React.FC = () => {
       <Navbar theme={theme} setTheme={setTheme} />
       <About />
       <Projects/>
-      <Skills/>      
-      {/* <TrustedBy />
-      <Services />
-      <ContactUs /> */}
+      <Skills/>   
+      <Contact/>   
       <Footer theme={theme} />
 
       {/* Custom cursor ring */}
