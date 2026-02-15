@@ -14,58 +14,91 @@ const Projects: React.FC = () => {
   const projectData: WorkItem[] = [
     {
       title: 'Shalom World',
-      description: 'A dynamic platform connecting viewers to inspirational content worldwide, delivering seamless media experiences and user engagement.',
+      description:
+        'A dynamic platform connecting viewers to inspirational content worldwide, delivering seamless media experiences and user engagement.',
       image: assets.shalom_world,
-      link : "shalomworld.org"
+      link: "https://shalomworld.org"
     },
     {
       title: 'BI Suite',
-      description: 'An intuitive dashboard system that transforms complex business data into actionable insights with a clean, interactive interface.',
+      description:
+        'An intuitive dashboard system that transforms complex business data into actionable insights with a clean, interactive interface.',
       image: assets.bi_suite,
-      link: "www.mygoal.biz"
+      link: "https://www.mygoal.biz"
     },
     {
       title: 'Digital Agency',
-      description: 'Showcasing creative solutions and modern web experiences, designed to elevate brands and engage audiences effectively.',
+      description:
+        'Showcasing creative solutions and modern web experiences, designed to elevate brands and engage audiences effectively.',
       image: assets.digital_agency,
-      link: "agencydigital-three.vercel.app/"
+      link: "https://agencydigital-three.vercel.app/"
     }
   ]
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ staggerChildren: 0.2 }}
+      transition={{ duration: 0.6 }}
       id='projects'
-      className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'
+      className='flex flex-col items-center gap-10 px-4 sm:px-12 lg:px-24 xl:px-40 pt-28 text-gray-700 dark:text-white'
     >
       <Title
         title='Featured Projects'
-        desc='Showcasing a selection of projects where creativity meets functionality—crafting interactive, high-performance digital experiences that engage users and drive results'
+        desc='Showcasing a selection of projects where creativity meets functionality—crafting interactive, high-performance digital experiences that engage users and drive results.'
       />
 
-      <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl'>
+      <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl'>
         {projectData.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            className='className="group transform transition duration-300 hover:-translate-y-2"'>
-            <a  href={project.link}>  
-              <div className="p-5 bg-blue-50 dark:bg-gray-500 rounded-2xl 
-                shadow-md hover:shadow-xl transition-all duration-300 
-                border border-gray-100 dark:border-gray-800">
-                <img 
-                  src={project.image} 
-                  className="w-full h-48 object-cover rounded-xl transition duration-500 group-hover:scale-105"
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="group"
+          >
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl overflow-hidden 
+              bg-blue-50 dark:bg-gray-900
+              border border-gray-100 dark:border-gray-800
+              shadow-md hover:shadow-2xl
+              transition-all duration-500
+              hover:-translate-y-3 p-4"
+            >
+              {/* Image Wrapper */}
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src={project.image}
                   alt={project.title}
+                  className="w-full h-56 object-cover
+                  transition-transform duration-700 ease-in-out
+                  group-hover:scale-110"
                 />
-                <h3 className='mt-3 mb-2 text-lg font-semibold'>{project.title}</h3>
-                <p className='text-sm leading-relaxed'>{project.description}</p>
+
+                {/* Overlay Effect */}
+                <div className="absolute inset-0 bg-black/0 
+                  group-hover:bg-black/20
+                  transition duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className='text-lg font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition'>
+                  {project.title}
+                </h3>
+                <p className='text-sm text-gray-600 dark:text-gray-400 leading-relaxed'>
+                  {project.description}
+                </p>
+
+                <div className="mt-4 text-sm font-medium text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition duration-300">
+                  View Project →
+                </div>
               </div>
             </a>
           </motion.div>
