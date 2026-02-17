@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Navbar from './components/Navbar'
-// import TrustedBy from './components/TrustedBy'
-// import Services from './components/Services'
-// import OurWork from './components/OurWork'
 import Skills from './components/Skills'
-// import ContactUs from './components/ContactUs'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import About from './components/About'
@@ -19,10 +15,21 @@ const App: React.FC = () => {
   const dotRef = useRef<HTMLDivElement>(null)
   const outlineRef = useRef<HTMLDivElement>(null)
 
-  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
-  const position = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
+  const mouse = useRef({ x: 0, y: 0 })
+  const position = useRef({ x: 0, y: 0 })
+  const animationFrame = useRef<number | null>(null)
 
   useEffect(() => {
+    // Disable custom cursor on mobile
+    if (window.innerWidth < 768) return
+
+    // Disable if user prefers reduced motion (accessibility)
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+
+    if (prefersReducedMotion) return
+
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX
       mouse.current.y = e.clientY
@@ -31,43 +38,52 @@ const App: React.FC = () => {
     document.addEventListener('mousemove', handleMouseMove)
 
     const animate = () => {
-      position.current.x += (mouse.current.x - position.current.x) * 0.1
-      position.current.y += (mouse.current.y - position.current.y) * 0.1
+      // Smooth trailing effect
+      position.current.x += (mouse.current.x - position.current.x) * 0.12
+      position.current.y += (mouse.current.y - position.current.y) * 0.12
 
       if (dotRef.current && outlineRef.current) {
-        dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`
+        // Dot follows instantly
+        dotRef.current.style.transform = `translate3d(${mouse.current.x - 4}px, ${mouse.current.y - 4}px, 0)`
+
+        // Ring trails smoothly
         outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`
       }
 
-      requestAnimationFrame(animate)
+      animationFrame.current = requestAnimationFrame(animate)
     }
 
     animate()
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current)
+      }
     }
   }, [])
 
   return (
-    <div className='dark:bg-black relative'>
+    <div className="dark:bg-black relative">
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
       <About />
-      <Projects/>
-      <Skills/>   
-      <Contact/>   
-      <Footer theme={theme} />
+      <Projects />
+      <Skills />
+      <Contact />
+      <Footer />
 
-      {/* Custom cursor ring */}
+      {/* Custom Cursor Ring */}
       <div
         ref={outlineRef}
-        className='fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999]'
-        style={{ transition: 'transform 0.1s ease-out' }}
+        className="fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999] hidden md:block"
       />
 
       {/* Custom Cursor Dot */}
-      <div ref={dotRef} className='fixed top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999]' />
+      <div
+        ref={dotRef}
+        className="fixed top-0 left-0 h-2 w-2 rounded-full bg-primary pointer-events-none z-[9999] hidden md:block"
+      />
     </div>
   )
 }

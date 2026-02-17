@@ -1,6 +1,5 @@
 import React from 'react'
 import Title from './Title'
-// import assets from '../assets/assets'
 import toast from 'react-hot-toast'
 import { motion } from "motion/react"
 
@@ -36,10 +35,10 @@ const Contact: React.FC = () => {
   return (
     <motion.section
       id='contact'
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      transition={{ staggerChildren: 0.2 }}
       className='relative flex flex-col items-center gap-10 px-4 sm:px-12 lg:px-24 xl:px-40 py-14 w-full text-gray-700 dark:text-white'
     >
       {/* ===== Section Title ===== */}
