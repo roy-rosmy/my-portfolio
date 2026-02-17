@@ -22,13 +22,13 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
       initial={{ opacity: 0, y: -40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70"
+      className="flex justify-between items-center px-4 sm:px-8 lg:px-16 xl:px-35 py-3 sticky top-0 z-20  font-medium bg-white/50 dark:bg-gray-900/70"
     >
 
       {/* Logo */}
       <img
         src={theme === 'dark' ? assets.logo_dark : assets.logo_light}
-        className="h-13 w-40 sm:w-52 object-contain"
+        className="h-13 w-auto sm:h-12 object-contain"
         alt="Logo"
       />
 
@@ -54,10 +54,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
           />
         </button>
 
-        <a onClick={() => setSidebarOpen(false)} href="#">About</a>
-        <a onClick={() => setSidebarOpen(false)} href="#projects">Projects</a>
-        <a onClick={() => setSidebarOpen(false)} href="#skills">Skills</a>
-        <a onClick={() => setSidebarOpen(false)} href="#contact">Contact</a>
+        <a onClick={() => setSidebarOpen(false)} href="#" className='hover:text-primary transition-colors'>About</a>
+        <a onClick={() => setSidebarOpen(false)} href="#projects" className='hover:text-primary transition-colors'>Projects</a>
+        <a onClick={() => setSidebarOpen(false)} href="#skills" className='hover:text-primary transition-colors'>Skills</a>
+        <a onClick={() => setSidebarOpen(false)} href="#contact" className='hover:text-primary transition-colors'>Contact</a>
       </div>
 
       {/* Right Section */}

@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className='relative flex flex-col items-center gap-10 px-4 sm:px-12 lg:px-24 xl:px-40 py-14 w-full text-gray-700 dark:text-white'
+      className='relative flex flex-col items-center gap-10 scroll-mt-18 px-4 sm:px-12 lg:px-24 xl:px-40 py-20 w-full text-gray-700 dark:text-white'
     >
       {/* ===== Section Title ===== */}
       <Title

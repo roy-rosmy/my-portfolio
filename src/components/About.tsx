@@ -6,7 +6,7 @@ const About: React.FC = () => {
   return (
     <div
       id="about"
-      className="relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 py-24 px-6 sm:px-12 lg:px-24 xl:px-40 w-full text-gray-700 dark:text-white"
+      className="relative overflow-hidden flex flex-col lg:flex-row items-start justify-between gap-12 py-26 scroll-mt-18 px-6 sm:px-12 lg:px-24 xl:px-40 w-full text-gray-700 dark:text-white"
     >
       {/* ===== Radiant Spread Dots Background ===== */}
       <div

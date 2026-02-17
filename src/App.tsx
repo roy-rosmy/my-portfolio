@@ -39,8 +39,8 @@ const App: React.FC = () => {
 
     const animate = () => {
       // Smooth trailing effect
-      position.current.x += (mouse.current.x - position.current.x) * 0.12
-      position.current.y += (mouse.current.y - position.current.y) * 0.12
+      position.current.x += (mouse.current.x - position.current.x) * 0.22
+      position.current.y += (mouse.current.y - position.current.y) * 0.22
 
       if (dotRef.current && outlineRef.current) {
         // Dot follows instantly
